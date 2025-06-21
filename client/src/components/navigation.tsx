@@ -24,7 +24,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50" role="navigation" aria-label="Main navigation">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
@@ -39,6 +39,7 @@ export default function Navigation() {
                   key={item.href}
                   onClick={() => handleNavClick(item.href)}
                   className="text-gray-700 hover:text-primary transition-colors duration-200"
+                  aria-label={`Navigate to ${item.label} section`}
                 >
                   {item.label}
                 </button>

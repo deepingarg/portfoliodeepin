@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-white" role="main">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
@@ -35,7 +35,7 @@ export default function AboutSection() {
               Experienced IT leader with <strong>9+ years</strong> in delivery, operations, and digital transformation. I specialize in Agile/Scrum methodologies, ERP implementations, Web/Mobile Development, and cutting-edge AI/ML solutions.
             </p>
             <p className="text-lg leading-relaxed text-gray-700">
-              I'm known for my ability to align technology initiatives with business goals while ensuring measurable results. My expertise spans across project delivery, risk management, and building high-performing teams that drive organizational success.
+              I excel at aligning technology initiatives with business objectives while ensuring measurable results. My expertise encompasses project delivery, risk management, and building high-performing teams that drive organizational success across diverse industries.
             </p>
             
             <div className="grid grid-cols-2 gap-6 pt-6">

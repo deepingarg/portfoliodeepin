@@ -1,4 +1,4 @@
-import { Linkedin, Mail, Github } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -9,19 +9,26 @@ export default function Footer() {
           <p className="text-gray-400 mb-6">Vice President – Delivery | Digital Transformation Leader</p>
           
           <div className="flex justify-center space-x-6 mb-8">
-            <button className="text-gray-400 hover:text-white transition-colors duration-200">
+            <a 
+              href="https://www.linkedin.com/in/deepingarg/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors duration-200"
+              aria-label="LinkedIn Profile"
+            >
               <Linkedin className="h-6 w-6" />
-            </button>
-            <button className="text-gray-400 hover:text-white transition-colors duration-200">
+            </a>
+            <a 
+              href="mailto:deepingarg@gmail.com"
+              className="text-gray-400 hover:text-white transition-colors duration-200"
+              aria-label="Email Contact"
+            >
               <Mail className="h-6 w-6" />
-            </button>
-            <button className="text-gray-400 hover:text-white transition-colors duration-200">
-              <Github className="h-6 w-6" />
-            </button>
+            </a>
           </div>
           
           <div className="border-t border-gray-700 pt-8">
-            <p className="text-gray-400">&copy; 2024 Deepin Garg. All rights reserved.</p>
+            <p className="text-gray-400">&copy; 2025 Deepin Garg. All rights reserved.</p>
           </div>
         </div>
       </div>

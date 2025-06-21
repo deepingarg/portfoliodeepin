@@ -1,40 +1,41 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useMutation } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
 import { Mail, Linkedin, Phone, MapPin, Send } from "lucide-react";
-import type { InsertContactMessage } from "@shared/schema";
 
 const contactInfo = [
   {
     icon: Mail,
-    title: "deepin.garg@crossml.com",
+    title: "deepingarg@gmail.com",
     subtitle: "Email",
     color: "primary",
+    href: "mailto:deepingarg@gmail.com",
   },
   {
     icon: Linkedin,
     title: "linkedin.com/in/deepingarg",
     subtitle: "LinkedIn",
     color: "accent",
+    href: "https://www.linkedin.com/in/deepingarg/",
   },
   {
     icon: Phone,
-    title: "+91 98765 43210",
+    title: "+91 98556 43356",
     subtitle: "Phone",
     color: "success",
+    href: "tel:+919855643356",
   },
   {
     icon: MapPin,
     title: "Delhi, India",
     subtitle: "Location",
     color: "purple",
+    href: null,
   },
 ];
 
@@ -67,33 +68,6 @@ export default function ContactSection() {
     message: "",
   });
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: InsertContactMessage) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-    },
-    onError: (error: any) => {
-      toast({
-        title: "Error sending message",
-        description: error.message || "Please try again later.",
-        variant: "destructive",
-      });
-    },
-  });
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -101,7 +75,31 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    contactMutation.mutate(formData);
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(
+      `Name: ${formData.firstName} ${formData.lastName}\n` +
+      `Email: ${formData.email}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    
+    const mailtoLink = `mailto:deepingarg@gmail.com?subject=${subject}&body=${body}`;
+    window.open(mailtoLink, '_blank');
+    
+    toast({
+      title: "Email client opened!",
+      description: "Your default email client should open with the message pre-filled.",
+    });
+    
+    // Reset form
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
   };
 
   return (
@@ -145,7 +143,18 @@ export default function ContactSection() {
                     <info.icon className={`h-5 w-5 ${colorClasses[info.color as keyof typeof colorClasses].text}`} />
                   </div>
                   <div>
-                    <div className="font-medium text-gray-900">{info.title}</div>
+                    {info.href ? (
+                      <a 
+                        href={info.href}
+                        target={info.href.startsWith('http') ? '_blank' : '_self'}
+                        rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="font-medium text-gray-900 hover:text-primary transition-colors"
+                      >
+                        {info.title}
+                      </a>
+                    ) : (
+                      <div className="font-medium text-gray-900">{info.title}</div>
+                    )}
                     <div className="text-sm text-gray-600">{info.subtitle}</div>
                   </div>
                 </motion.div>
@@ -237,11 +246,10 @@ export default function ContactSection() {
                   
                   <Button
                     type="submit"
-                    disabled={contactMutation.isPending}
                     className="w-full bg-primary hover:bg-primary/90"
                   >
                     <Send className="mr-2 h-4 w-4" />
-                    {contactMutation.isPending ? "Sending..." : "Send Message"}
+                    Send Message
                   </Button>
                 </form>
               </CardContent>
