@@ -34,20 +34,20 @@ export default function AboutSection() {
                 <div className="text-2xl md:text-3xl font-bold text-accent mb-2" role="text" aria-label="50 plus projects delivered">50+</div>
                 <div className="text-xs md:text-sm text-gray-600">Projects Delivered</div>
               </div>
-              <div className="text-center p-4 md:p-6 bg-success/5 rounded-lg sm:col-span-2 lg:col-span-1">
-                <div className="text-2xl md:text-3xl font-bold text-success mb-2" role="text" aria-label="100 plus team members led">100+</div>
+              <div className="text-center p-4 md:p-6 bg-green-100 rounded-lg sm:col-span-2 lg:col-span-1">
+                <div className="text-2xl md:text-3xl font-bold text-green-600 mb-2" role="text" aria-label="100 plus team members led">100+</div>
                 <div className="text-xs md:text-sm text-gray-600">Team Members Led</div>
               </div>
             </div>
             
             <div className="flex flex-wrap justify-center gap-3 pt-6">
-              <Badge variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20">
+              <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20">
                 PMP Certified
               </Badge>
-              <Badge variant="secondary" className="bg-accent/10 text-accent hover:bg-accent/20">
+              <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20 hover:bg-accent/20">
                 Scrum Master
               </Badge>
-              <Badge variant="secondary" className="bg-success/10 text-success hover:bg-success/20">
+              <Badge variant="secondary" className="bg-green-100 text-green-600 border-green-200 hover:bg-green-200">
                 Six Sigma
               </Badge>
             </div>

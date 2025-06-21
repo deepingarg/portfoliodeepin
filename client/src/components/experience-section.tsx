@@ -65,10 +65,10 @@ const colorClasses = {
     badge: "bg-accent/10 text-accent",
   },
   success: {
-    bg: "bg-success",
-    cardBg: "bg-gradient-to-br from-success/5 to-accent/5",
-    text: "text-success",
-    badge: "bg-success/10 text-success",
+    bg: "bg-green-600",
+    cardBg: "bg-gradient-to-br from-green-50 to-accent/5",
+    text: "text-green-600",
+    badge: "bg-green-100 text-green-600",
   },
   purple: {
     bg: "bg-purple-600",

@@ -19,8 +19,8 @@
   --secondary-foreground: hsl(220, 9%, 46%);
   --accent: hsl(199, 89%, 48%);
   --accent-foreground: hsl(199, 100%, 98%);
-  --success: hsl(160, 84%, 39%);
-  --success-foreground: hsl(160, 100%, 98%);
+  --success: hsl(142, 76%, 36%);
+  --success-foreground: hsl(355, 100%, 97%);
   --destructive: hsl(0, 84.2%, 60.2%);
   --destructive-foreground: hsl(60, 9.1%, 97.8%);
   --ring: hsl(20, 14.3%, 4.1%);
@@ -44,8 +44,8 @@
   --secondary-foreground: hsl(0, 0%, 98%);
   --accent: hsl(240, 3.7%, 15.9%);
   --accent-foreground: hsl(0, 0%, 98%);
-  --success: hsl(160, 84%, 39%);
-  --success-foreground: hsl(160, 100%, 98%);
+  --success: hsl(142, 76%, 36%);
+  --success-foreground: hsl(355, 100%, 97%);
   --destructive: hsl(0, 62.8%, 30.6%);
   --destructive-foreground: hsl(0, 0%, 98%);
   --ring: hsl(240, 4.9%, 83.9%);

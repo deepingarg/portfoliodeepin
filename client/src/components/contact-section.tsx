@@ -49,8 +49,8 @@ const colorClasses = {
     text: "text-accent",
   },
   success: {
-    bg: "bg-success/10",
-    text: "text-success",
+    bg: "bg-green-100",
+    text: "text-green-600",
   },
   purple: {
     bg: "bg-purple-100",
@@ -187,7 +187,7 @@ export default function ContactSection() {
                 </a>
                 <a 
                   href="tel:+919855643356" 
-                  className="text-success hover:text-success/80 focus:text-success/80 focus:outline-none focus:ring-2 focus:ring-success focus:ring-offset-2 rounded p-1 transition-colors"
+                  className="text-green-600 hover:text-green-500 focus:text-green-500 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 rounded p-1 transition-colors"
                   aria-label="Call phone number"
                 >
                   <Phone className="h-5 w-5" />

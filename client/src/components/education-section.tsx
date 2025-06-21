@@ -30,8 +30,8 @@ const colorClasses = {
     text: "text-accent",
   },
   success: {
-    bg: "bg-success/5",
-    text: "text-success",
+    bg: "bg-green-100",
+    text: "text-green-600",
   },
 };
 
@@ -75,7 +75,7 @@ export default function EducationSection() {
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">Grade</span>
-                    <span className="font-medium text-success">Grade A</span>
+                    <span className="font-medium text-green-600">Grade A</span>
                   </div>
                 </div>
                 

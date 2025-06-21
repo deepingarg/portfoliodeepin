@@ -52,9 +52,9 @@ const colorClasses = {
     bar: "bg-accent",
   },
   success: {
-    bg: "bg-success/10",
-    text: "text-success",
-    bar: "bg-success",
+    bg: "bg-green-100",
+    text: "text-green-600",
+    bar: "bg-green-600",
   },
   purple: {
     bg: "bg-purple-100",
