@@ -32,11 +32,12 @@ project/
 - ✅ Created `/api/contact.ts` as Vercel serverless function
 - ✅ Maintained Zod validation with `insertContactMessageSchema`
 - ✅ Added proper CORS headers for frontend communication
+- ✅ Fixed runtime configuration to use `nodejs18.x`
 
 ### 3. Build Configuration
-- ✅ Updated `vite.config.ts` for static build output
-- ✅ Created `vercel.json` with proper routing configuration
-- ✅ Configured API proxy for development
+- ✅ Updated `vercel.json` with correct Node.js runtime
+- ✅ Configured proper routing and rewrites
+- ✅ Set up static build output for frontend
 
 ## Environment Variables for Vercel
 
@@ -72,6 +73,27 @@ PGHOST=your_db_host
    ```bash
    vercel --prod
    ```
+
+## ⚠️ Common Issues Fixed
+
+### Runtime Configuration Error
+If you encounter "runtime version is missing or incorrect", ensure your `vercel.json` uses:
+```json
+{
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "nodejs18.x"
+    }
+  }
+}
+```
+
+### Supported Runtimes
+- `nodejs16.x`
+- `nodejs18.x` (recommended)
+- `nodejs20.x`
+- `python3.9`
+- `go1.x`
 
 ## API Endpoint Usage
 
