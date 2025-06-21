@@ -83,7 +83,7 @@ export default function HeroSection() {
                     <a href="tel:+919855643356" className="hover:text-primary transition-colors focus:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1" aria-label="Call +91 98556 43356">
                       📱 +91 98556 43356
                     </a>
-                    <span>📍 Delhi, India</span>
+                    <span>📍 Chandigarh, India</span>
                   </div>
                 </div>
               </div>

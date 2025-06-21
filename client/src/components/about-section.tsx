@@ -35,8 +35,8 @@ export default function AboutSection() {
                 <div className="text-xs md:text-sm text-gray-600">Projects Delivered</div>
               </div>
               <div className="text-center p-4 md:p-6 bg-success/5 rounded-lg sm:col-span-2 lg:col-span-1">
-                <div className="text-2xl md:text-3xl font-bold text-success mb-2" role="text" aria-label="15 plus teams led">15+</div>
-                <div className="text-xs md:text-sm text-gray-600">Teams Led</div>
+                <div className="text-2xl md:text-3xl font-bold text-success mb-2" role="text" aria-label="100 plus team members led">100+</div>
+                <div className="text-xs md:text-sm text-gray-600">Team Members Led</div>
               </div>
             </div>
             

@@ -32,7 +32,7 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    title: "Delhi, India",
+    title: "Chandigarh, India",
     subtitle: "Location",
     color: "purple",
     href: null,
