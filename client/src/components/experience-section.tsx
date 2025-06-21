@@ -128,14 +128,21 @@ export default function ExperienceSection() {
                     <p className="text-gray-700 leading-relaxed mb-4">{experience.description}</p>
                     
                     <div className="flex flex-wrap gap-2">
-                      {experience.skills.map((skill) => (
-                        <Badge
+                      {experience.skills.map((skill, skillIndex) => (
+                        <motion.div
                           key={skill}
-                          variant="secondary"
-                          className={colorClasses[experience.color as keyof typeof colorClasses].badge}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.4, delay: skillIndex * 0.1 }}
+                          viewport={{ once: true }}
                         >
-                          {skill}
-                        </Badge>
+                          <Badge
+                            variant="secondary"
+                            className={`${colorClasses[experience.color as keyof typeof colorClasses].badge} hover:scale-105 transition-transform duration-200 shadow-sm`}
+                          >
+                            {skill}
+                          </Badge>
+                        </motion.div>
                       ))}
                     </div>
                   </CardContent>
