@@ -11,7 +11,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="pt-20 pb-16 bg-gradient-to-br from-primary/5 to-accent/5" role="banner">
+    <section id="home" className="pt-20 pb-16 bg-gradient-to-br from-primary/10 via-accent/5 to-green-50" role="banner">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -19,10 +19,10 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-primary via-accent to-green-600 bg-clip-text text-transparent mb-6">
               Deepin Garg
             </h1>
-            <p className="text-xl lg:text-2xl text-secondary font-medium mb-6">
+            <p className="text-xl lg:text-2xl text-gray-700 font-semibold mb-6 px-4 py-2 bg-white/60 rounded-lg backdrop-blur-sm border border-white/20">
               Vice President – Delivery, CrossML Pvt Ltd
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -38,10 +38,10 @@ export default function HeroSection() {
                     handleScrollTo("#contact");
                   }
                 }}
-                className="inline-flex items-center px-8 py-3 bg-primary text-white hover:bg-primary/90 focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary to-accent text-white hover:from-primary/90 hover:to-accent/90 focus:ring-2 focus:ring-primary focus:ring-offset-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 font-semibold"
                 aria-label="Navigate to contact section"
               >
-                <Mail className="mr-2 h-4 w-4" aria-hidden="true" />
+                <Mail className="mr-2 h-5 w-5" aria-hidden="true" />
                 Get In Touch
               </Button>
               <Button
@@ -53,10 +53,10 @@ export default function HeroSection() {
                     handleScrollTo("#about");
                   }
                 }}
-                className="inline-flex items-center px-8 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                className="inline-flex items-center px-8 py-4 border-2 border-primary text-primary hover:bg-gradient-to-r hover:from-primary hover:to-accent hover:text-white focus:ring-2 focus:ring-primary focus:ring-offset-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 font-semibold bg-white/80 backdrop-blur-sm"
                 aria-label="Navigate to about section"
               >
-                <User className="mr-2 h-4 w-4" aria-hidden="true" />
+                <User className="mr-2 h-5 w-5" aria-hidden="true" />
                 Learn More
               </Button>
             </div>
@@ -68,22 +68,24 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center justify-center"
           >
-            <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-12 w-full max-w-md mx-auto lg:max-w-full shadow-2xl">
+            <div className="bg-gradient-to-br from-primary/15 via-accent/10 to-green-100 rounded-2xl p-8 lg:p-12 w-full max-w-md mx-auto lg:max-w-full shadow-2xl border border-white/30 backdrop-blur-sm">
               <div className="text-center space-y-6">
-                <div className="w-32 h-32 bg-gradient-to-br from-primary to-accent rounded-full mx-auto flex items-center justify-center">
+                <div className="w-32 h-32 bg-gradient-to-br from-primary via-accent to-green-600 rounded-full mx-auto flex items-center justify-center shadow-lg ring-4 ring-white/30">
                   <span className="text-4xl font-bold text-white">DG</span>
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-bold text-gray-900">Ready to Transform Your Business?</h3>
-                  <p className="text-gray-600">Let's discuss your digital transformation goals and project requirements.</p>
-                  <div className="flex flex-col space-y-2 text-sm text-gray-500">
-                    <a href="mailto:deepingarg@gmail.com" className="hover:text-primary transition-colors focus:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1" aria-label="Send email to deepingarg@gmail.com">
-                      📧 deepingarg@gmail.com
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Ready to Transform Your Business?</h3>
+                  <p className="text-gray-700 font-medium">Let's discuss your digital transformation goals and project requirements.</p>
+                  <div className="flex flex-col space-y-3 text-sm">
+                    <a href="mailto:deepingarg@gmail.com" className="flex items-center justify-center gap-2 px-4 py-2 bg-white/70 rounded-lg hover:bg-white/90 text-primary font-semibold transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" aria-label="Send email to deepingarg@gmail.com">
+                      <span className="text-lg">📧</span> deepingarg@gmail.com
                     </a>
-                    <a href="tel:+919855643356" className="hover:text-primary transition-colors focus:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1" aria-label="Call +91 98556 43356">
-                      📱 +91 98556 43356
+                    <a href="tel:+919855643356" className="flex items-center justify-center gap-2 px-4 py-2 bg-white/70 rounded-lg hover:bg-white/90 text-accent font-semibold transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2" aria-label="Call +91 98556 43356">
+                      <span className="text-lg">📱</span> +91 98556 43356
                     </a>
-                    <span>📍 Chandigarh, India</span>
+                    <div className="flex items-center justify-center gap-2 px-4 py-2 bg-white/70 rounded-lg text-green-600 font-semibold">
+                      <span className="text-lg">📍</span> Chandigarh, India
+                    </div>
                   </div>
                 </div>
               </div>

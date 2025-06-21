@@ -147,6 +147,30 @@
     background-clip: text;
   }
 
+  /* Glowing effect */
+  .glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  /* Animated gradient background */
+  .animated-gradient {
+    background: linear-gradient(-45deg, hsl(217, 91%, 60%), hsl(199, 89%, 48%), hsl(142, 76%, 36%), hsl(217, 91%, 60%));
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   .skill-bar {
     position: relative;
     overflow: hidden;
