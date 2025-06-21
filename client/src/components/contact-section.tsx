@@ -1,0 +1,254 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { useMutation } from "@tanstack/react-query";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
+import { Mail, Linkedin, Phone, MapPin, Send } from "lucide-react";
+import type { InsertContactMessage } from "@shared/schema";
+
+const contactInfo = [
+  {
+    icon: Mail,
+    title: "deepin.garg@crossml.com",
+    subtitle: "Email",
+    color: "primary",
+  },
+  {
+    icon: Linkedin,
+    title: "linkedin.com/in/deepingarg",
+    subtitle: "LinkedIn",
+    color: "accent",
+  },
+  {
+    icon: Phone,
+    title: "+91 98765 43210",
+    subtitle: "Phone",
+    color: "success",
+  },
+  {
+    icon: MapPin,
+    title: "Delhi, India",
+    subtitle: "Location",
+    color: "purple",
+  },
+];
+
+const colorClasses = {
+  primary: {
+    bg: "bg-primary/10",
+    text: "text-primary",
+  },
+  accent: {
+    bg: "bg-accent/10",
+    text: "text-accent",
+  },
+  success: {
+    bg: "bg-success/10",
+    text: "text-success",
+  },
+  purple: {
+    bg: "bg-purple-100",
+    text: "text-purple-600",
+  },
+};
+
+export default function ContactSection() {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const contactMutation = useMutation({
+    mutationFn: async (data: InsertContactMessage) => {
+      const response = await apiRequest("POST", "/api/contact", data);
+      return response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Error sending message",
+        description: error.message || "Please try again later.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    contactMutation.mutate(formData);
+  };
+
+  return (
+    <section id="contact" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+          <p className="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
+            Ready to drive digital transformation in your organization? Let's discuss how we can achieve your business goals together.
+          </p>
+        </div>
+        
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Let's Connect</h3>
+              <p className="text-gray-600 leading-relaxed mb-8">
+                I'm always interested in discussing new opportunities, sharing insights about digital transformation, or exploring how technology can drive business success.
+              </p>
+            </div>
+            
+            <div className="space-y-6">
+              {contactInfo.map((info, index) => (
+                <motion.div
+                  key={info.title}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-center"
+                >
+                  <div className={`w-12 h-12 ${colorClasses[info.color as keyof typeof colorClasses].bg} rounded-lg flex items-center justify-center mr-4`}>
+                    <info.icon className={`h-5 w-5 ${colorClasses[info.color as keyof typeof colorClasses].text}`} />
+                  </div>
+                  <div>
+                    <div className="font-medium text-gray-900">{info.title}</div>
+                    <div className="text-sm text-gray-600">{info.subtitle}</div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            
+            <img
+              src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300"
+              alt="Professional meeting"
+              className="rounded-xl shadow-lg w-full h-48 object-cover"
+            />
+          </motion.div>
+          
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <Card className="bg-gradient-to-br from-primary/5 to-accent/5">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-6">Send a Message</h3>
+                
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <Label htmlFor="firstName">First Name</Label>
+                      <Input
+                        id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleInputChange}
+                        placeholder="John"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="lastName">Last Name</Label>
+                      <Input
+                        id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleInputChange}
+                        placeholder="Doe"
+                        required
+                      />
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="email">Email Address</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="john.doe@example.com"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="subject">Subject</Label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      placeholder="Project Discussion"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      rows={5}
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="Tell me about your project requirements..."
+                      className="resize-none"
+                      required
+                    />
+                  </div>
+                  
+                  <Button
+                    type="submit"
+                    disabled={contactMutation.isPending}
+                    className="w-full bg-primary hover:bg-primary/90"
+                  >
+                    <Send className="mr-2 h-4 w-4" />
+                    {contactMutation.isPending ? "Sending..." : "Send Message"}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
