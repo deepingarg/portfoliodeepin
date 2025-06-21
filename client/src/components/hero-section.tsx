@@ -26,7 +26,7 @@ export default function HeroSection() {
               Vice President – Delivery, CrossML Pvt Ltd
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Experienced IT leader specializing in digital transformation, project management, and delivering exceptional client outcomes through innovative technology solutions.
+              Expert in digital transformation services for enterprises, ERP implementation, AI/ML development solutions, and custom software development for corporations. Delivering scalable tech solutions that drive business growth.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

@@ -19,10 +19,10 @@ export default function AboutSection() {
             className="space-y-6 text-center"
           >
             <p className="text-lg leading-relaxed text-gray-700">
-              Experienced IT leader with <strong>9+ years</strong> in delivery, operations, and digital transformation. I specialize in Agile/Scrum methodologies, ERP implementations, Web/Mobile Development, and cutting-edge AI/ML solutions.
+              Leading IT project delivery firm expertise with <strong>9+ years</strong> providing digital transformation services for enterprises. Specialized in ERP implementation, enterprise mobile app development, and AI/ML development solutions for businesses across various industries.
             </p>
             <p className="text-lg leading-relaxed text-gray-700">
-              I excel at aligning technology initiatives with business objectives while ensuring measurable results. My expertise encompasses project delivery, risk management, and building high-performing teams that drive organizational success across diverse industries.
+              As an automation service provider for enterprises, I deliver custom software development for corporations while ensuring scalable tech solutions for SMEs. My proven track record includes successful IT outsourcing partnerships and technology modernization projects.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 pt-8 max-w-2xl mx-auto">

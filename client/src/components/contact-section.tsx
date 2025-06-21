@@ -109,7 +109,7 @@ export default function ContactSection() {
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
           <p className="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
-            Ready to drive digital transformation in your organization? Let's discuss how we can achieve your business goals together.
+            Looking for digital transformation services for your enterprise? Let's discuss ERP implementation, AI/ML development solutions, and custom software development for your corporation.
           </p>
         </div>
         
@@ -125,7 +125,7 @@ export default function ContactSection() {
             <div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">Let's Connect</h3>
               <p className="text-gray-600 leading-relaxed mb-8">
-                I'm always interested in discussing new opportunities, sharing insights about digital transformation, or exploring how technology can drive business success.
+                Available for IT outsourcing partnerships, enterprise technology consulting, and scalable tech solutions for SMEs. Let's explore how automation service providers can drive your business transformation.
               </p>
             </div>
             
@@ -167,7 +167,7 @@ export default function ContactSection() {
                 <Mail className="h-8 w-8 text-white" />
               </div>
               <h4 className="text-lg font-semibold text-gray-900 mb-2">Quick Contact</h4>
-              <p className="text-gray-600 text-sm mb-4">Available for new opportunities and consulting projects</p>
+              <p className="text-gray-600 text-sm mb-4">Expert in digital transformation services • ERP implementation • AI/ML solutions</p>
               <div className="flex justify-center space-x-4">
                 <a 
                   href="mailto:deepingarg@gmail.com" 
