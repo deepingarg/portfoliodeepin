@@ -25,18 +25,18 @@ export default function AboutSection() {
               I excel at aligning technology initiatives with business objectives while ensuring measurable results. My expertise encompasses project delivery, risk management, and building high-performing teams that drive organizational success across diverse industries.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 max-w-2xl mx-auto">
-              <div className="text-center p-6 bg-primary/5 rounded-lg">
-                <div className="text-3xl font-bold text-primary mb-2">9+</div>
-                <div className="text-sm text-gray-600">Years Experience</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 pt-8 max-w-2xl mx-auto">
+              <div className="text-center p-4 md:p-6 bg-primary/5 rounded-lg">
+                <div className="text-2xl md:text-3xl font-bold text-primary mb-2" role="text" aria-label="9 plus years experience">9+</div>
+                <div className="text-xs md:text-sm text-gray-600">Years Experience</div>
               </div>
-              <div className="text-center p-6 bg-accent/5 rounded-lg">
-                <div className="text-3xl font-bold text-accent mb-2">50+</div>
-                <div className="text-sm text-gray-600">Projects Delivered</div>
+              <div className="text-center p-4 md:p-6 bg-accent/5 rounded-lg">
+                <div className="text-2xl md:text-3xl font-bold text-accent mb-2" role="text" aria-label="50 plus projects delivered">50+</div>
+                <div className="text-xs md:text-sm text-gray-600">Projects Delivered</div>
               </div>
-              <div className="text-center p-6 bg-success/5 rounded-lg">
-                <div className="text-3xl font-bold text-success mb-2">15+</div>
-                <div className="text-sm text-gray-600">Teams Led</div>
+              <div className="text-center p-4 md:p-6 bg-success/5 rounded-lg sm:col-span-2 lg:col-span-1">
+                <div className="text-2xl md:text-3xl font-bold text-success mb-2" role="text" aria-label="15 plus teams led">15+</div>
+                <div className="text-xs md:text-sm text-gray-600">Teams Led</div>
               </div>
             </div>
             

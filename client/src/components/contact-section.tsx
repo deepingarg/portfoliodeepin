@@ -113,7 +113,7 @@ export default function ContactSection() {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -148,7 +148,8 @@ export default function ContactSection() {
                         href={info.href}
                         target={info.href.startsWith('http') ? '_blank' : '_self'}
                         rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="font-medium text-gray-900 hover:text-primary transition-colors"
+                        className="font-medium text-gray-900 hover:text-primary focus:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded transition-colors"
+                        aria-label={`${info.subtitle}: ${info.title}`}
                       >
                         {info.title}
                       </a>
@@ -168,13 +169,27 @@ export default function ContactSection() {
               <h4 className="text-lg font-semibold text-gray-900 mb-2">Quick Contact</h4>
               <p className="text-gray-600 text-sm mb-4">Available for new opportunities and consulting projects</p>
               <div className="flex justify-center space-x-4">
-                <a href="mailto:deepingarg@gmail.com" className="text-primary hover:text-primary/80 transition-colors">
+                <a 
+                  href="mailto:deepingarg@gmail.com" 
+                  className="text-primary hover:text-primary/80 focus:text-primary/80 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded p-1 transition-colors"
+                  aria-label="Send email"
+                >
                   <Mail className="h-5 w-5" />
                 </a>
-                <a href="https://www.linkedin.com/in/deepingarg/" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors">
+                <a 
+                  href="https://www.linkedin.com/in/deepingarg/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-accent hover:text-accent/80 focus:text-accent/80 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded p-1 transition-colors"
+                  aria-label="Visit LinkedIn profile"
+                >
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a href="tel:+919855643356" className="text-success hover:text-success/80 transition-colors">
+                <a 
+                  href="tel:+919855643356" 
+                  className="text-success hover:text-success/80 focus:text-success/80 focus:outline-none focus:ring-2 focus:ring-success focus:ring-offset-2 rounded p-1 transition-colors"
+                  aria-label="Call phone number"
+                >
                   <Phone className="h-5 w-5" />
                 </a>
               </div>
@@ -193,7 +208,7 @@ export default function ContactSection() {
                 <h3 className="text-2xl font-semibold text-gray-900 mb-6">Send a Message</h3>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                     <div>
                       <Label htmlFor="firstName">First Name</Label>
                       <Input
@@ -259,9 +274,10 @@ export default function ContactSection() {
                   
                   <Button
                     type="submit"
-                    className="w-full bg-primary hover:bg-primary/90"
+                    className="w-full bg-primary hover:bg-primary/90 focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                    aria-label="Submit contact form"
                   >
-                    <Send className="mr-2 h-4 w-4" />
+                    <Send className="mr-2 h-4 w-4" aria-hidden="true" />
                     Send Message
                   </Button>
                 </form>

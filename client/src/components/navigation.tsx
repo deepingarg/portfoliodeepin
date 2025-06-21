@@ -38,8 +38,15 @@ export default function Navigation() {
                 <button
                   key={item.href}
                   onClick={() => handleNavClick(item.href)}
-                  className="text-gray-700 hover:text-primary transition-colors duration-200"
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handleNavClick(item.href);
+                    }
+                  }}
+                  className="text-gray-700 hover:text-primary focus:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1 transition-colors duration-200"
                   aria-label={`Navigate to ${item.label} section`}
+                  tabIndex={0}
                 >
                   {item.label}
                 </button>
@@ -61,7 +68,14 @@ export default function Navigation() {
                     <button
                       key={item.href}
                       onClick={() => handleNavClick(item.href)}
-                      className="text-left text-gray-700 hover:text-primary transition-colors duration-200 text-lg"
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          handleNavClick(item.href);
+                        }
+                      }}
+                      className="text-left text-gray-700 hover:text-primary focus:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md p-2 transition-colors duration-200 text-lg w-full"
+                      tabIndex={0}
                     >
                       {item.label}
                     </button>

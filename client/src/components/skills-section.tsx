@@ -77,7 +77,7 @@ export default function SkillsSection() {
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.title}
@@ -86,13 +86,13 @@ export default function SkillsSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-8">
+              <Card className="h-full hover:shadow-xl transition-shadow duration-300" role="article" aria-labelledby={`skill-${index}`}>
+                <CardContent className="p-6 md:p-8">
                   <div className={`w-16 h-16 ${colorClasses[skill.color as keyof typeof colorClasses].bg} rounded-lg flex items-center justify-center mb-6`}>
                     <skill.icon className={`h-8 w-8 ${colorClasses[skill.color as keyof typeof colorClasses].text}`} />
                   </div>
                   
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{skill.title}</h3>
+                  <h3 id={`skill-${index}`} className="text-lg md:text-xl font-semibold text-gray-900 mb-4">{skill.title}</h3>
                   <p className="text-gray-600 mb-6">{skill.description}</p>
                   
                   <div className="space-y-3">
