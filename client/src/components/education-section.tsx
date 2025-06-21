@@ -79,11 +79,9 @@ export default function EducationSection() {
                   </div>
                 </div>
                 
-                <img
-                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300"
-                  alt="University campus"
-                  className="rounded-lg mt-6 w-full h-32 object-cover"
-                />
+                <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg mt-6 p-4 text-center">
+                  <div className="text-sm text-gray-600 font-medium">Strong foundation in computer engineering principles and software development methodologies</div>
+                </div>
               </CardContent>
             </Card>
           </motion.div>

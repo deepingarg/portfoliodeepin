@@ -161,11 +161,24 @@ export default function ContactSection() {
               ))}
             </div>
             
-            <img
-              src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300"
-              alt="Professional meeting"
-              className="rounded-xl shadow-lg w-full h-48 object-cover"
-            />
+            <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl p-8 text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-full mx-auto flex items-center justify-center mb-4">
+                <Mail className="h-8 w-8 text-white" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">Quick Contact</h4>
+              <p className="text-gray-600 text-sm mb-4">Available for new opportunities and consulting projects</p>
+              <div className="flex justify-center space-x-4">
+                <a href="mailto:deepingarg@gmail.com" className="text-primary hover:text-primary/80 transition-colors">
+                  <Mail className="h-5 w-5" />
+                </a>
+                <a href="https://www.linkedin.com/in/deepingarg/" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a href="tel:+919855643356" className="text-success hover:text-success/80 transition-colors">
+                  <Phone className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
           </motion.div>
           
           {/* Contact Form */}
